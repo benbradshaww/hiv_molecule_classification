@@ -1,0 +1,11 @@
+torch
+torch_geometric
+networkx
+IPython
+rdkit
+pandas
+matplotlib
+os
+tqdm
+time
+pre-commit
