@@ -1,19 +1,40 @@
-Sections:
-* Dataset
+HIV Molecule Classification Project
 
+Dataset
 
-** Dataset
-This HIV Dataset from
-The results of the screening test released in May 2004 placed each compound in one of three categories.
+This project utilizes an HIV dataset released in May 2004, which categorizes chemical compounds into three classes based on the results of a screening test:
 
-CA - Confirmed Active
-CM - Confirmed Moderately Active
-CI - Confirmed Inactive
+	•	CA: Confirmed Active
+	•	CM: Confirmed Moderately Active
+	•	CI: Confirmed Inactive
 
-In this investigation I will be creating a model to classify molecules based on whether they are confirmed HIV active or not.
-Consequently, classes CA and CM will be merged into one and are assigned the label 1. CI will be assigned the label 0.
+Class Simplification
 
-One difficulty with this dataset revolves around the number of HIV positive samples.
-There are 1443 HIV positive molecules and 39684 HIV negative molecules.
+For the purposes of this investigation, I merged classes CA and CM into a single positive class (assigned label 1), while the CI class is treated as the negative class (assigned label 0). This simplifies the classification problem into a binary task: identifying HIV-active vs. HIV-inactive molecules.
 
-Test set results: loss= 0.4025 accuracy= 0.8580 recall= 0.4158 precision= 0.1084 f1= 0.1720
+Imbalanced Dataset Challenge
+
+One key challenge with this dataset is the imbalance between HIV-positive and HIV-negative samples:
+
+	•	HIV positive molecules: 1,443
+	•	HIV negative molecules: 39,684
+
+To address this imbalance, I applied a combination of undersampling of HIV-negative molecules and oversampling of HIV-positive molecules to create a more balanced training dataset.
+
+Model
+
+I employed a Message Passing Neural Network (MPNN) for this classification task. MPNNs are designed for processing graph-structured data, which is well-suited for representing molecules as graphs with atoms as nodes and bonds as edges. For more information on MPNNs, please visit my blog: MPNN Blog Post.
+
+Model Performance
+
+The model’s performance on the test dataset is as follows:
+
+	•	Test Loss: 0.4025
+	•	Test Accuracy: 85.80%
+	•	Recall: 41.58%
+	•	Precision: 10.84%
+	•	F1 Score: 17.20%
+
+Despite a decent overall accuracy, the model struggled to correctly identify HIV-positive molecules, with 60% of HIV-positive samples being misclassified as inactive. This indicates a challenge in detecting the minority class (HIV positive) effectively, which is a common issue when dealing with imbalanced datasets.
+
+This version organizes the information more clearly, improving readability and conveying the project’s challenges and results more effectively.
