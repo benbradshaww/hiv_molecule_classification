@@ -1,8 +1,17 @@
 # Ignore data
 data/
 
-# Ignore Environment
+# Ignore virtual environment
 myenv*
 
 # Ignore cache
 __pycache__/
+
+# ???
+???/
+
+# Mypy Cache
+.mypy_cache/
+
+# DS store
+.DS_Store
