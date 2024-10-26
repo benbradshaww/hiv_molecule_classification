@@ -25,7 +25,7 @@ One key challenge with this dataset is the imbalance between HIV-positive and HI
 	•	HIV positive molecules: 1,443
 	•	HIV negative molecules: 39,684
 
-To address this imbalance, I applied a combination of undersampling of HIV-negative molecules and oversampling of HIV-positive molecules to create a more balanced training dataset. Additionally, I added more weight to the HIV-positive classification.
+To address the dataset imbalance, I employed a combination of undersampling HIV-negative molecules and oversampling HIV-positive molecules to achieve a more balanced training set. Additionally, I introduced a weighted loss function during training to penalize the misclassification of HIV-positive molecules, assigning a higher weight to their errors.
 
 **Model**
 
